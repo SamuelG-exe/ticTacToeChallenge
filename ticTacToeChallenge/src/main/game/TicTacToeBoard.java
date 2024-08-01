@@ -79,8 +79,14 @@ public class TicTacToeBoard {
      * @param team the team (X or O) to check for
      * @return true if there are three pieces in a row, false otherwise
      */
-    public boolean threeInARow(TicTacToeGame.Team team) {
-        String stringOfTeam = (team == TicTacToeGame.Team.X) ? "X" : "O";
+    public boolean threeInARow(TicTacToeGame.Team team){
+        String stringOfTeam;
+        if(team == TicTacToeGame.Team.X) {
+            stringOfTeam = "X";
+        }
+        else {
+            stringOfTeam = "O";
+        }
         return rowChecker(stringOfTeam) || colChecker(stringOfTeam) || diagonalChecker(stringOfTeam);
     }
 
@@ -91,10 +97,10 @@ public class TicTacToeBoard {
      * @return true if there are three pieces in a row in any row, false otherwise
      */
     private boolean rowChecker(String team) {
-        for (String[] row : gameBoard) {
-            if (Objects.equals(row[0], team) &&
-                    Objects.equals(row[0], row[1]) &&
-                    Objects.equals(row[1], row[2])) {
+        for (int i = 0; i < gameBoard.length; i++) {
+            if (Objects.equals(gameBoard[i][0], team) &&
+                    Objects.equals(gameBoard[i][0], gameBoard[i][1]) &&
+                    Objects.equals(gameBoard[i][1], gameBoard[i][2])) {
                 return true;
             }
         }
