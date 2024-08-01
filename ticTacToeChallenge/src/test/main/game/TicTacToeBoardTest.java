@@ -30,4 +30,11 @@ class TicTacToeBoardTest {
     }
 
 
+    @Test
+    void placeXO() {
+        TicTacToeBoard testBoard = new TicTacToeBoard();
+        XOPosition testLocal = new XOPosition(0 , 0);
+        testBoard.placeXO(testLocal, TicTacToeGame.Team.X);
+        assertEquals("X", testBoard.getPiece(testLocal));
+    }
 }

@@ -13,9 +13,9 @@ public class TicTacToeBoard {
 
     /*
     I need a few functions for sure
-    1)Reset - for new games and testing
-    2)getXorO - need to access the board's individual locations
-    3)placeXO - need to be able to set a locations piece to an X or O
+    1)Reset - for new games and testing - Done
+    2)getXorO - need to access the board's individual locations - Done
+    3)placeXO - need to be able to set a locations piece to an X or O - Done
      */
 
     //for testing ONLY
