@@ -1,10 +1,13 @@
 package main.ui;
 
 import main.game.TicTacToeGame;
+import main.game.XOPosition;
 
 import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
+
+import static main.ui.DrawBoard.drawboard;
 
 public class InteractiveUI {
     private static final PrintStream out = new PrintStream(System.out, true, StandardCharsets.UTF_8);
@@ -24,7 +27,7 @@ public class InteractiveUI {
 
         while (true) {
             runMenuUI();
-            DrawBoard.drawboard(game.gameBoard);
+            drawboard(game.gameBoard);
             runInGameUI();
         }
 
@@ -78,9 +81,24 @@ public class InteractiveUI {
 
     private static void runInGameUI() {
         while (status == UserStatus.INGAME) {
-            //prompt
-            //grab input
-            //change UserStatus or exit program or loop again
+            out.println("Would box would you like to play in");
+            out.println("Please enter a number from 1-9 with 1, 2, and 3 being the top row from left to right");
+            String input = scanner.nextLine().toLowerCase();
+            switch (input) {
+                case "1": {
+                    try {
+                        game.play(new XOPosition(0, 0));
+                    } catch (Exception e) {
+                        out.println(e.getMessage());
+                        if (game.gameOver) {
+                            status = UserStatus.MENU;
+                            preGame = true;
+                        }
+                    }
+                    drawboard(game.gameBoard);
+                    break;
+                }
+            }
         }
     }
 }
