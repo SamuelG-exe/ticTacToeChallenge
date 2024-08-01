@@ -22,7 +22,7 @@ public class TicTacToeGame {
      * @param botGoesFirst boolean indicating if the bot should make the first move
      * @throws Exception if an error occurs during the bot's play
      */
-    TicTacToeGame(boolean botGoesFirst) throws Exception {
+    public TicTacToeGame(boolean botGoesFirst) throws Exception {
         gameBoard = new TicTacToeBoard();
         gameBoard.resetBoard();
         gameOver = false;
