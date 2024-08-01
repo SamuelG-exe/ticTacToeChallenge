@@ -1,4 +1,4 @@
-package ui;
+package main.ui;
 
 import main.game.TicTacToeBoard;
 import main.game.XOPosition;
