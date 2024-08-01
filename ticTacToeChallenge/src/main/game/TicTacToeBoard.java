@@ -16,6 +16,8 @@ public class TicTacToeBoard {
     1)Reset - for new games and testing - Done
     2)getXorO - need to access the board's individual locations - Done
     3)placeXO - need to be able to set a locations piece to an X or O - Done
+    4)checkFor3InARow - need to report 3 in a row
+    5)CheckforNomorePlays - is the board full
      */
 
     //for testing ONLY
@@ -45,5 +47,6 @@ public class TicTacToeBoard {
             gameBoard[position.getRow()][position.getCol()] = "O";
         }
     }
+
 
 }
