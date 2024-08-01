@@ -85,22 +85,68 @@ public class InteractiveUI {
             out.println("Please enter a number from 1-9 with 1, 2, and 3 being the top row from left to right");
             String input = scanner.nextLine().toLowerCase();
             switch (input) {
-                case "1": {
-                    try {
-                        game.play(new XOPosition(0, 0));
-                    } catch (Exception e) {
-                        out.println(e.getMessage());
-                        if (game.gameOver) {
-                            status = UserStatus.MENU;
-                            preGame = true;
-                        }
-                    }
+                case "1" : {
+                    makePlay(0,0);
                     drawboard(game.gameBoard);
                     break;
                 }
+                case "2" : {
+                    makePlay(0, 1);
+                    drawboard(game.gameBoard);
+                    break;
+                }
+                case "3" : {
+                    makePlay(0, 2);
+                    drawboard(game.gameBoard);
+                    break;
+                }
+                case "4" : {
+                    makePlay(1, 0);
+                    drawboard(game.gameBoard);
+                    break;
+                }
+                case "5" : {
+                    makePlay(1, 1);
+                    drawboard(game.gameBoard);
+                    break;
+                }
+                case "6" : {
+                    makePlay(1, 2);
+                    drawboard(game.gameBoard);
+                    break;
+                }
+                case "7" : {
+                    makePlay(2, 0);
+                    drawboard(game.gameBoard);
+                    break;
+                }
+                case "8" : {
+                    makePlay(2, 1);
+                    drawboard(game.gameBoard);
+                    break;
+                }
+                case "9" : {
+                    makePlay(2, 2);
+                    drawboard(game.gameBoard);
+                    break;
+                }
+
+                }
+            }
+        }
+
+    private static void makePlay(int row, int col) {
+        try {
+            game.play(new XOPosition(row, col));
+        } catch (Exception e) {
+            out.println(e.getMessage());
+            if (game.gameOver) {
+                status = UserStatus.MENU;
+                preGame = true;
             }
         }
     }
+
 }
 
 

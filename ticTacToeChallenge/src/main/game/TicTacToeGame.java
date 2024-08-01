@@ -58,6 +58,7 @@ public class TicTacToeGame {
             if (turn == Team.X) {
                 nextPlayersTurn();
                 botPlay();
+                checkGameStatus();
             } else {
                 nextPlayersTurn();
             }
