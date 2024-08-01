@@ -27,6 +27,7 @@ public class TicTacToeGame {
             //bot take turn
         }
         gameBoard = new TicTacToeBoard();
+        gameBoard.resetBoard();
         gameOver = false;
 
     }
