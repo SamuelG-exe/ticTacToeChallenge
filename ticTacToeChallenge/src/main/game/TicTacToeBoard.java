@@ -29,8 +29,21 @@ public class TicTacToeBoard {
             Arrays.fill(strings, "*");
         }
     }
-    public String getPiece(int row, int col){
-        return gameBoard[row][col];
+
+
+    public String getPiece(XOPosition position){
+        return gameBoard[position.getRow()][position.getCol()];
+    }
+
+
+    //Upon starting this function I realized I wanted a position class/Possible Record as it improves code comprehension and should help mitigate out of bounds errors.
+    public void placeXO(XOPosition position, TicTacToeGame.Team team){
+        if(team == TicTacToeGame.Team.X) {
+            gameBoard[position.getRow()][position.getCol()] = "X";
+        }
+        else{
+            gameBoard[position.getRow()][position.getCol()] = "O";
+        }
     }
 
 }

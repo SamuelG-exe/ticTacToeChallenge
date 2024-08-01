@@ -11,7 +11,8 @@ class TicTacToeBoardTest {
         TicTacToeBoard testBoard = new TicTacToeBoard();
         String[][] array = testBoard.getArray();
         array[0][0] = "*";
-        assertEquals("*", testBoard.getPiece(0, 0));
+        XOPosition testLocal = new XOPosition(0 , 0);
+        assertEquals("*", testBoard.getPiece(testLocal));
 
     }
 
@@ -21,7 +22,8 @@ class TicTacToeBoardTest {
         testBoard.resetBoard();
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                assertEquals("*", testBoard.getPiece(i, j));
+                XOPosition testLocal = new XOPosition(i , j);
+                assertEquals("*", testBoard.getPiece(testLocal));
             }
         }
 
