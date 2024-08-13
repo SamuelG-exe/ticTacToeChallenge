@@ -12,26 +12,18 @@ import static main.ui.DrawBoard.drawboard;
 public class InteractiveUI {
     private static final PrintStream out = new PrintStream(System.out, true, StandardCharsets.UTF_8);
     static Scanner scanner = new Scanner(System.in);
-    static UserStatus status;
+    static UserStatus status = UserStatus.MENU;
     private static TicTacToeGame game;
     static boolean preGame = true;
 
 
-    public static void main(String[] args) throws Exception {
-        out.println("X----Welcome to TicTacToe----O");
-        status = UserStatus.MENU;
-        runStateMachine();
-    }
 
-    private static void runStateMachine() throws Exception {
-
+    public void runStateMachine() throws Exception {
         while (true) {
             runMenuUI();
             drawboard(game.gameBoard);
             runInGameUI();
         }
-
-
     }
 
     private static void runMenuUI() throws Exception {
