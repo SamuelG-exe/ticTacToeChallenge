@@ -1,4 +1,4 @@
-package main.ui;
+package main;
 
 import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
